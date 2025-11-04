@@ -1,0 +1,12 @@
+/* 데스크탑에서만 기본 커서 숨김, 터치/입력에서는 표시 */
+@media (pointer: fine) {
+    html.spark-cursor-enabled body { cursor: none; }
+    input, textarea, [contenteditable="true"] { cursor: text !important; }
+    a, button { cursor: none !important; }
+}
+
+/* 커서가 안 보이는 환경 대비(애니메이션 비활성 선호 사용자) */
+@media (prefers-reduced-motion: reduce) {
+    .spark-cursor-enabled, .lux-cursor-ring { transition: none !important; }
+}
+

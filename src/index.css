@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* 라이트 기본: 검정 텍스트 + 흰 배경 */
+    html { @apply bg-white text-neutral-900; }
+    /* 다크: 흰 텍스트 + 어두운 배경 */
+    .dark html { @apply bg-neutral-950 text-white; }
+}
+
+/* 보조(설명) 텍스트 전용 유틸 */
+@layer utilities {
+    .muted { @apply text-neutral-700 dark:text-neutral-300; }
+    .subtle { @apply text-neutral-600 dark:text-neutral-400; } /* 더 옅게 쓸 때만 */
+}
+/* 배경 오버레이: 라이트를 아주 연하게, 다크는 유지 */
+.body-bg {
+    position: fixed; inset: 0; pointer-events: none;
+    background:
+            radial-gradient(900px 520px at 80% -10%, rgba(0,0,0,.03), transparent 60%),
+            radial-gradient(700px 440px at 10% -20%, rgba(59,130,246,.08), transparent 60%),
+            linear-gradient(transparent, rgba(0,0,0,.02)),
+            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: auto, auto, auto, 24px 24px, 24px 24px;
+    background-position: 0 0, 0 0, 0 0, -2px -2px, -2px -2px;
+}
+.dark .body-bg {
+    background:
+            radial-gradient(1000px 600px at 80% -10%, rgba(255,255,255,.06), transparent 60%),
+            radial-gradient(800px 500px at 10% -20%, rgba(59,130,246,.15), transparent 60%),
+            linear-gradient(transparent, rgba(0,0,0,.35)),
+            linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: auto, auto, auto, 24px 24px, 24px 24px;
+    background-position: 0 0, 0 0, 0 0, -2px -2px, -2px -2px;
+}
+
+/* spacing helpers (@apply에 반응형 X) */
+.container-px { @apply px-4; }
+@screen sm { .container-px { @apply px-6; } }
+.section { @apply py-16; }
+.section-title { @apply text-2xl font-semibold tracking-tight; }
+@screen sm { .section-title { @apply text-3xl; } }
+
+/* 카드: 라이트는 순백+얕은 그림자, 다크는 기존 톤 */
+.card {
+    @apply rounded-2xl border bg-white shadow-sm border-neutral-200
+    dark:bg-neutral-900 dark:border-neutral-800;
+}
+
+/* 버튼 */
+.btn { @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition; }
+.btn-ghost {
+    @apply border border-neutral-300 text-neutral-900 hover:bg-neutral-100 hover:border-neutral-400
+    dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:hover:border-neutral-500;
+}
+.btn-solid {
+    @apply bg-black text-white hover:opacity-90
+    dark:bg-white dark:text-black;
+}
+
+/* 네비 언더라인 */
+.nav-link { @apply relative px-2 py-1; }
+.nav-link::after {
+    content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+    transform:scaleX(0); transform-origin:left; background: currentColor; transition:transform .25s ease;
+}
+.nav-link:hover::after { transform:scaleX(1); }
+.active .nav-link::after { transform:scaleX(1); }
+
