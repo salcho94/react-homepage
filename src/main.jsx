@@ -1,26 +1,55 @@
+// router.jsx
+import React, { StrictMode, Suspense, lazy } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from '@/pages/Home'
-import Projects from '@/pages/Projects'
-import Contact from '@/pages/Contact.jsx'
+import AppLayout from '@/layout/AppLayout.jsx'
+import NotFound from '@/pages/NotFound.jsx'
 import '@/index.css'
 import '@/style.css'
-import Experience from "@/pages/Experience.jsx";
-import AppLayout from "@/layout/AppLayout.jsx";
-import TechPage from "@/pages/Tech.jsx";
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <AppLayout />,
-        children: [
-            { index: true, element: <Home /> },
-            { path: 'tech', element: <TechPage /> },
-            { path: 'projects', element: <Projects /> },
-            { path: 'experience', element: <Experience /> },
-            { path: 'contact', element: <Contact /> },
-        ],
-    },
-])
+// ✅ route-level code splitting
+const Home = lazy(() => import('@/pages/Home'))
+const TechPage = lazy(() => import('@/pages/Tech.jsx'))
+const Projects = lazy(() => import('@/pages/Projects'))
+const Experience = lazy(() => import('@/pages/Experience.jsx'))
+const Contact = lazy(() => import('@/pages/Contact.jsx'))
 
-createRoot(document.getElementById('root')).render(<RouterProvider router={router} />)
+
+const Page = ({ children }) => (
+    <Suspense
+        fallback={
+            <div className="min-h-[50vh] grid place-items-center text-neutral-500">
+                로딩 중…
+            </div>
+        }
+    >
+        {children}
+    </Suspense>
+)
+
+
+const router = createBrowserRouter(
+    [
+        {
+            path: '/',
+            element: <AppLayout />,
+            errorElement: <NotFound />,
+            children: [
+                { index: true, element: <Page><Home /></Page> },
+                { path: 'tech', element: <Page><TechPage /></Page> },
+                { path: 'projects', element: <Page><Projects /></Page> },
+                { path: 'experience', element: <Page><Experience /></Page> },
+                { path: 'contact', element: <Page><Contact /></Page> },
+                { path: '*', element: <NotFound /> },
+            ],
+        },
+        { path: '*', element: <NotFound /> },
+    ],
+)
+
+
+createRoot(document.getElementById('root')).render(
+    <StrictMode>
+        <RouterProvider router={router} />
+    </StrictMode>
+)

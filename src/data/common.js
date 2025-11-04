@@ -64,13 +64,28 @@ export const TECHS = [
   { name: 'JSP/JSTL', desc: 'Java 기반 서버 사이드 템플릿' },
   { name: 'Gradle', desc: '빌드 자동화 도구' },
   { name: 'Maven', desc: '프로젝트 관리 및 빌드 도구' },
+  { name: 'Vite', desc: '초고속 번들러' },
+  { name: 'WebPack', desc: '범용 모듈화 번들러' },
   { name: 'GitHub', desc: 'CI/CD 플랫폼' },
 ]
 
 export const PROJECTS = [
   {
+    name: 'dongjinmns',
+    period: '2025.11',
+    description: 'vue 기반 지인 회사 홈페이지',
+    highlights: [
+      '지인 회사 홈페이지 개발',
+      '메일 전송기능 개발'
+    ],
+    repo: 'https://github.com/xhaxha2/dongginMns',
+    demo: 'https://dongjinmns.kro.kr/',
+    stack: ['vue', 'vite', 'git hosting'],
+    type: 'toy',
+  },
+  {
     name: 'luck777',
-    period: '2024',
+    period: '2024.11',
     description: 'react + Spring Boot 기반 운세확인사이트',
     highlights: [
       '랜덤 운세 확인 기능 개발',
@@ -83,7 +98,7 @@ export const PROJECTS = [
   },
   {
     name: 'js-company',
-    period: '2024',
+    period: '2023.11',
     description: 'Next.js + Spring Boot 기반 근태 관리 시스템',
     highlights: [
     '직원 연차·미팅·출장 관리 기능 개발',
@@ -96,7 +111,7 @@ export const PROJECTS = [
   },
   {
     name: 'salcho-main',
-    period: '2025',
+    period: '2024 - ing',
     description:
         'React + spring boot 기반의 종합 웹 애플리케이션',
     highlights: [
@@ -116,7 +131,7 @@ export const PROJECTS = [
   },
   {
     name: 'CJ CGV 차세대 시스템 (온모바일)',
-    period: '2025',
+    period: '2025.3 - 2025.11',
     description:
         'React 기반 차세대 프론트엔드(스토어/액티비티/씨네톡) 신규 개발 및 결함 개선',
     highlights: [
@@ -131,7 +146,7 @@ export const PROJECTS = [
   },
   {
     name: 'KT알파 통합 재고관리시스템 (TAMS)',
-    period: '2024',
+    period: '2024.3 - 2024.8',
     description:
         'KT알파 물류 재고 관리 플랫폼 내 웹 관리자 기능개선 및 Oracle 기반 데이터 처리 로직 개발',
     highlights: [
@@ -146,7 +161,7 @@ export const PROJECTS = [
   },
   {
     name: '한살림 리뉴얼 고도화',
-    period: '2024',
+    period: '2024.8 - 2025.1',
     description:
         'Vue 구조에서 React로 전환하며 UI/UX 개선 및 관리자 기능 고도화 수행',
     highlights: [
@@ -161,7 +176,7 @@ export const PROJECTS = [
   },
   {
     name: '현대해상 TMS 웹 관리자 시스템',
-    period: '2023',
+    period: '2023.1 - 2023.6',
     description:
         '보험사 관리자용 대시보드 화면 유지보수 및 신규 기능 연동 개발',
     highlights: [
@@ -176,7 +191,7 @@ export const PROJECTS = [
   },
   {
     name: '한솔 신기한 나라 프로젝트 (Live & 관리자)',
-    period: '2022',
+    period: '2022.2 - 2022.12',
     description:
         '유아 교육 콘텐츠 웹사이트 Live/관리자 플랫폼 개발. 신규 프론트 화면과 관리자 기능 통합 구축',
     highlights: [
@@ -191,7 +206,7 @@ export const PROJECTS = [
   },
   {
     name: 'AltiCast (피플카)',
-    period: '2022',
+    period: '2022.4 - 2022.9',
     description:
         'VOC 대응 및 React 기반 프론트엔드 부분개발 진행. 고객 피드백에 따른 즉각적 UI 개선 및 유지보수 수행',
     highlights: [
@@ -206,7 +221,7 @@ export const PROJECTS = [
   },
   {
     name: '국방부 사이트 프론트 리뉴얼',
-    period: '2022',
+    period: '2022.10 - 2022.12',
     description:
         '기존 공공기관 사이트의 JSP 구조 개선 및 전면적인 UI 리뉴얼 진행',
     highlights: [
@@ -221,7 +236,7 @@ export const PROJECTS = [
   },
   {
     name: '공정경쟁지원 / 콘텐츠분쟁조정 / 국립국어원',
-    period: '2021',
+    period: '2021.1 - 2021.12',
     description:
         '공공기관 웹 시스템 신규 구축 및 유지보수. JSP 기반 백엔드 및 DB 관리 기능 개발',
     highlights: [

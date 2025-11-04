@@ -36,8 +36,8 @@ export default function Projects() {
             filter === 'All' ? PROJECTS : PROJECTS.filter((d) => d.stack.includes(filter))
 
         const sorted = [...filtered].sort((a, b) => {
-            const ka = periodKey(a.period)
-            const kb = periodKey(b.period)
+            const ka = periodKey(a.period.slice(0,4))
+            const kb = periodKey(b.period.slice(0,4))
             return sort === 'recent' ? kb - ka : ka - kb
         })
 
@@ -74,7 +74,6 @@ export default function Projects() {
 
                 {/* 정렬 토글 */}
                 <div className="flex items-center gap-2 text-sm">
-                    <span className="text-neutral-500">정렬</span>
                     <div className="inline-flex rounded-full border border-neutral-300 dark:border-neutral-700 p-0.5">
                         <button
                             onClick={() => setSort('recent')}
