@@ -62,17 +62,10 @@ export default function NotFoundIDE() {
         } catch {}
     }
 
-    function onSearchKey(e) {
-        if (e.key === "Enter") {
-            const q = query.trim();
-            if (!q) return goHome();
-            // fallback site search (replace with your search route)
-            window.location.href = `/search?q=${encodeURIComponent(q)}`;
-        }
-    }
+
 
     return (
-        <main className="relative min-h-[calc(100dvh)] bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+        <main>
             {/* background grid + radial */}
             <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(60%_60%_at_50%_30%,black,transparent)]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_-10%,rgba(99,102,241,.25),transparent_45%),radial-gradient(circle_at_70%_120%,rgba(16,185,129,.18),transparent_35%)]" />
