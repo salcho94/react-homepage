@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {Suspense, useEffect, useState} from 'react'
 import { Link, Outlet, NavLink } from 'react-router-dom'
 import Footer from "@/layout/Footer.jsx";
 import Header from "@/layout/Header.jsx";
@@ -6,7 +6,7 @@ import CustomCursor from "@/component/CustomCursor.jsx";
 
 const LINKS = {
     github: 'https://github.com/salcho94',
-    blog: '',
+    blog: 'https://salcho-blog.kro.kr',
     email: 'salcho94@naver.com',
 }
 
@@ -30,6 +30,13 @@ export default function AppLayout() {
     }
 
     return (
+        <Suspense
+            fallback={
+                <div className="min-h-[50vh] grid place-items-center text-neutral-500">
+                    로딩 중…
+                </div>
+            }
+        >
         <div className="flex min-h-screen flex-col bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
             <CustomCursor />
             <div className="body-bg" />
@@ -39,6 +46,7 @@ export default function AppLayout() {
             </main>
             <Footer links={LINKS}/>
         </div>
+        </Suspense>
     )
 }
 

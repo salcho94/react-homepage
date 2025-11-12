@@ -7,25 +7,12 @@ import NotFound from '@/pages/NotFound.jsx'
 import '@/index.css'
 import '@/style.css'
 
-// ✅ route-level code splitting
 const Home = lazy(() => import('@/pages/Home'))
 const TechPage = lazy(() => import('@/pages/Tech.jsx'))
 const Projects = lazy(() => import('@/pages/Projects'))
 const Experience = lazy(() => import('@/pages/Experience.jsx'))
 const Contact = lazy(() => import('@/pages/Contact.jsx'))
 
-
-const Page = ({ children }) => (
-    <Suspense
-        fallback={
-            <div className="min-h-[50vh] grid place-items-center text-neutral-500">
-                로딩 중…
-            </div>
-        }
-    >
-        {children}
-    </Suspense>
-)
 
 
 const router = createBrowserRouter(
@@ -35,11 +22,11 @@ const router = createBrowserRouter(
             element: <AppLayout />,
             errorElement: <NotFound />,
             children: [
-                { index: true, element: <Page><Home /></Page> },
-                { path: 'tech', element: <Page><TechPage /></Page> },
-                { path: 'projects', element: <Page><Projects /></Page> },
-                { path: 'experience', element: <Page><Experience /></Page> },
-                { path: 'contact', element: <Page><Contact /></Page> },
+                { index: true, element: <Home /> },
+                { path: 'tech', element: <TechPage /> },
+                { path: 'projects', element: <Projects /> },
+                { path: 'experience', element: <Experience /> },
+                { path: 'contact', element: <Contact /> },
                 { path: '*', element: <NotFound /> },
             ],
         },

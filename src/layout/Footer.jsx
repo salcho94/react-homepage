@@ -13,8 +13,8 @@ const Footer = ({links}) => {
                     className="w-4 h-4"/> 이메일</a>
                 <a href={links.github} target="_blank" className="hover:opacity-80 flex items-center gap-1"><Github
                     className="w-4 h-4"/> GitHub</a>
-                {/*<a href={links.blog} target="_blank" className="hover:opacity-80 flex items-center gap-1"><FileText*/}
-                {/*    className="w-4 h-4"/> Blog</a>*/}
+                <a href={links.blog} target="_blank" className="hover:opacity-80 flex items-center gap-1"><FileText
+                    className="w-4 h-4"/> Blog</a>
             </div>
         </div>
     </footer>
