@@ -6,7 +6,7 @@ import CustomCursor from "@/component/CustomCursor.jsx";
 
 const LINKS = {
     github: 'https://github.com/salcho94',
-    blog: 'https://salcho-blog.kro.kr',
+    blog: 'http://salcho-blog.kro.kr',
     email: 'salcho94@naver.com',
 }
 
