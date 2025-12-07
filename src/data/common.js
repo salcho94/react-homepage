@@ -2,9 +2,9 @@
 
 export const EXP = [
   {
-    company: '라드씨엔에스',
+    company: '라드씨엔에스 (전직장)',
     title: 'Software Developer',
-    period: '2024.03 – 현재',
+    period: '2024.03 – 12',
     summary:
         'Spring Boot + React 기반의 웹 시스템 신규 구축 및 차세대 서비스 고도화 중심으로 풀스택 개발을 수행했습니다.',
     bullets: [
@@ -23,7 +23,7 @@ export const EXP = [
     ],
   },
   {
-    company: '미르인컴',
+    company: '미르인컴 (전직장)',
     title: 'Web Developer',
     period: '2022.02 – 2023.06',
     summary:
@@ -36,7 +36,7 @@ export const EXP = [
     tags: ['Java', 'Spring MVC', 'JSP', 'Oracle', 'JSTL', 'JavaScript', 'jQuery'],
   },
   {
-    company: '에스엔비플러스',
+    company: '에스엔비플러스 (전직장)',
     title: 'Web Developer',
     period: '2020.11 – 2021.12',
     summary:
@@ -92,7 +92,7 @@ export const PROJECTS = [
       '운세 이미지 저장/관리자 문의메일 기능개발',
     ],
     repo: '#',
-    demo: 'http://js94.kro.kr:7777/',
+    demo: 'https://salcho-luck.n-e.kr/',
     stack: ['React', 'Spring Boot', 'TailwindCSS'],
     type: 'toy',
   },
@@ -125,7 +125,7 @@ export const PROJECTS = [
       '사용자 관리 및 페이지 접근 경로 관리 기능 설계',
     ],
     repo: 'https://github.com/salcho94/react-springboot',
-    demo: 'http://js94.kro.kr:3000/signIn',
+    demo: 'https://salcho.n-e.kr/signIn',
     stack: ['React', 'Spring Boot', 'TailwindCSS','recoil','socket.io'],
     type: 'toy',
   },
