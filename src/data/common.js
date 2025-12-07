@@ -4,7 +4,7 @@ export const EXP = [
   {
     company: '라드씨엔에스 (전직장)',
     title: 'Software Developer',
-    period: '2024.03 – 12',
+    period: '2024.03 – 2025.12',
     summary:
         'Spring Boot + React 기반의 웹 시스템 신규 구축 및 차세대 서비스 고도화 중심으로 풀스택 개발을 수행했습니다.',
     bullets: [
